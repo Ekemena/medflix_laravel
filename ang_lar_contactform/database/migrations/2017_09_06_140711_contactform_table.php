@@ -16,7 +16,8 @@ class ContactformTable extends Migration
         //
         Schema::create('contactform', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->unique();
+            $table->string('firstname')->unique();
+            $table->string('lastname')->unique();
             $table->string('email')->unique();
             $table->string('course');
             $table->string('message');

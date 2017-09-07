@@ -22,9 +22,6 @@ Route::get('/', function(){
 });
 
 Route::get('/api/v1/contactform/{id?}', 'Contactform@index');
-
 Route::post('/api/v1/contactform', 'Contactform@store');
-
-Route::post('/api/v1/contactform/{id}', 'Contactform@update');
-
-Route::delete('/api/v1/contactform/{id}', 'Contactform@destroy');
+// Route::post('/api/v1/contactform/{id}', 'Contactform@update');
+// Route::delete('/api/v1/contactform/{id}', 'Contactform@destroy');

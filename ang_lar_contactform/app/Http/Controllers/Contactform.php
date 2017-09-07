@@ -1,11 +1,11 @@
-<?php
+ <?php
 
 namespace App\Http\Controllers;
 
-use App\ContactFormModel;
-use App\Http\Requests;
+//use App\ContactFormModel;
+//use App\Http\Requests;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+//use App\Http\Controllers\Controller;
 
 class Contactform extends Controller
 {
@@ -31,7 +31,8 @@ class Contactform extends Controller
      */
     public function store(Request $request) {
         $contactform = new ContactForm;
-        $contactform->name = $request->input('name');
+        $contactform->name = $request->input('firstname');
+        $contactform->name = $request->input('lastname');
         $contactform->email = $request->input('email');
         $contactform->course = $request->input('course');
         $contactform->message = $request->input('message');
@@ -49,6 +50,7 @@ class Contactform extends Controller
         return ContactForm::find($id);
     }
 
+
     /**
      * Update the specified resource in storage.
      *
@@ -56,17 +58,17 @@ class Contactform extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request, $id) {
-        $contactform = ContactForm::find($id);
+    // public function update(Request $request, $id) {
+    //     $contactform = ContactForm::find($id);
 
-        $contactform->name = $request->input('name');
-        $contactform->email = $request->input('email');
-        $contactform->course = $request->input('course');
-        $contactform->message = $request->input('message');
-        $contactform->save();
+    //     $contactform->name = $request->input('name');
+    //     $contactform->email = $request->input('email');
+    //     $contactform->course = $request->input('course');
+    //     $contactform->message = $request->input('message');
+    //     $contactform->save();
 
-        return "Sucess updating user #" . $contactform->id;
-    }
+    //     return "Sucess updating user #" . $contactform->id;
+    // }
 
     /**
      * Remove the specified resource from storage.
@@ -74,12 +76,12 @@ class Contactform extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function destroy(Request $request) {
-        $contactform = ContactForm::find($request->input('id'));
+    // public function destroy(Request $request) {
+    //     $contactform = ContactForm::find($request->input('id'));
 
-        $contactform->delete();
+    //     $contactform->delete();
 
-        return "ContactForm record successfully deleted #" . $request->input('id');
-    }
+    //     return "ContactForm record successfully deleted #" . $request->input('id');
+    // }
 
 }
