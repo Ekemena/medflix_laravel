@@ -1,7 +1,6 @@
 app.controller('contactformController', function ($scope, $http, API_URL) {
   //retrieve contactform listing from API
 
-
   $http.get(API_URL + "contactform")
     .success(function (response) {
       $scope.contacts = response;
@@ -9,12 +8,12 @@ app.controller('contactformController', function ($scope, $http, API_URL) {
 
   //save new record / update existing record
   $scope.save = function (contact) {
-    var url = API_URL + "contactform";
+    var url = API_URL + "Contactform";
 
     $http({
       method: 'POST',
       url: url,
-      data: $.param($scope.contactform),
+      data: $.param($scope.Contactform),
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
     }).success(function (response) {
       console.log(response);
